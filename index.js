@@ -4,6 +4,9 @@ module.exports = function(game, opts) {
 };
 
 function HealthFallingPlugin(game, opts) {
+  this.blocksPerUnitDamage = opts.blocksPerUnitDamage || 4;
+  this.damageMultiplier = opts.damageMultiplier || 1;
+
   this.player = game.plugins.get('voxel-player');
   if (!this.player) throw new Error('voxel-health-falling requires voxel-player');
 
@@ -17,8 +20,8 @@ HealthFallingPlugin.prototype.enable = function() {
   var self = this;
 
   this.player.fell = function(dy) { // TODO: change voxel-physical to EventEmitter?
-    if (dy > 4) {
-      var damage = Math.ceil(dy / 4);
+    if (dy >= self.blocksPerUnitDamage) {
+      var damage = Math.ceil(dy / self.blocksPerUnitDamage) * self.damageMultiplier;
 
       self.health.hurt(damage);
     }
