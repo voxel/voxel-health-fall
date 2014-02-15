@@ -1,10 +1,10 @@
 {
-  "name": "voxel-health-falling",
+  "name": "voxel-health-fall",
   "description": "",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git@github.com:deathcap/voxel-health-falling.git"
+    "url": "git@github.com:deathcap/voxel-health-fall.git"
   },
   "keywords": [
     "voxel"

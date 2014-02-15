@@ -1,9 +1,9 @@
 
 module.exports = function(game, opts) {
-  return new HealthFallingPlugin(game, opts);
+  return new HealthFallPlugin(game, opts);
 };
 
-function HealthFallingPlugin(game, opts) {
+function HealthFallPlugin(game, opts) {
   this.blocksPerUnitDamage = opts.blocksPerUnitDamage || 4;
   this.damageMultiplier = opts.damageMultiplier || 1;
 
@@ -16,7 +16,7 @@ function HealthFallingPlugin(game, opts) {
   this.enable();
 }
 
-HealthFallingPlugin.prototype.enable = function() {
+HealthFallPlugin.prototype.enable = function() {
   var self = this;
 
   this.player.fell = function(dy) { // TODO: change voxel-physical to EventEmitter?
@@ -28,7 +28,7 @@ HealthFallingPlugin.prototype.enable = function() {
   };
 };
 
-HealthFallingPlugin.prototype.disable = function() {
+HealthFallPlugin.prototype.disable = function() {
   this.player.fell = undefined;
 };
 
