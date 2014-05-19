@@ -1,7 +1,7 @@
 {
   "name": "voxel-health-fall",
   "description": "player fall damage for voxel-health (voxel.js plugin)",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:deathcap/voxel-health-fall.git"
@@ -11,9 +11,7 @@
     "health",
     "damage"
   ],
-  "dependencies": {
-  },
-  "peerDependencies": {
-  },
+  "dependencies": {},
+  "peerDependencies": {},
   "license": "MIT"
 }
